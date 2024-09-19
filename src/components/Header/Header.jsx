@@ -56,7 +56,7 @@ const Header = () => {
         {/* Logo à esquerda no celular */}
         <div className="logo-container">
           <a href="/" onClick={handleHomeClick}>
-            <img src="/src/assets/logo.png" alt="Logo" className="logo" />
+            <img src="src/assets/logo.png" alt="Logo" className="logo" />
           </a>
         </div>
 
