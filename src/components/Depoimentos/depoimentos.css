@@ -1,0 +1,219 @@
+:root {
+  --primary-color: #6b3064;
+  --secondary-color: #ffffff;
+  --hover-color: #6211B8;
+  --button-color: #6211B8;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --soft-gray: #777777; /* Cor suave para o subtítulo */
+}
+
+/* Container principal */
+.depoimentos-container {
+  width: 100%;
+  padding: 60px 0;
+  background: rgba(255, 255, 255, 0.7) url('/src/assets/depoimentos.png') no-repeat center center;
+  background-size: cover;
+  color: black;
+  text-align: center;
+  position: relative;
+}
+
+.depoimentos-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.5);
+  z-index: 1;
+}
+
+.depoimentos-container * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Título e subtítulo */
+.depoimentos-container h2 {
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: var(--soft-gray);
+}
+
+/* Grid responsivo */
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card de cada depoimento */
+.depoimento-card {
+  background-color: var(--secondary-color);
+  color: black;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Adiciona rolagem para avaliações longas */
+.comentario {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: black;
+  line-height: 1.5;
+  max-height: 150px; /* Define um limite de altura */
+  overflow-y: auto;  /* Adiciona barra de rolagem se exceder o limite */
+  padding-right: 10px; /* Para dar espaço à rolagem */
+}
+
+/* Estiliza a barra de rolagem */
+.comentario::-webkit-scrollbar {
+  width: 6px;
+}
+
+.comentario::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 3px;
+}
+
+/* Cabeçalho do card */
+.depoimento-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.author-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid var(--primary-color);
+}
+
+.author-info .nome {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.author-info .data {
+  font-size: 0.9rem;
+  color: black;
+}
+
+/* Estrelas */
+.estrelas {
+  color: #f1c40f;
+  display: flex;
+}
+
+/* Bolinhas de navegação */
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--primary-color);
+}
+
+/* Botão Fale Conosco */
+.button-container {
+  margin-top: 30px;
+}
+
+.contact-button {
+  background-color: var(--button-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.contact-button:hover {
+  background-color: var(--hover-color);
+  color: var(--secondary-color);
+  transform: translateY(-5px);
+}
+
+/* Animação de bounce */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.contact-button {
+  animation: bounce 2s infinite;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .depoimentos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .depoimentos-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .depoimento-card {
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+
+  .depoimentos-container {
+    padding: 40px 20px;
+  }
+
+  .contact-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

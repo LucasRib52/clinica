@@ -1,0 +1,225 @@
+:root {
+  --primary-color: #6b3064;
+  --hover-color: #6211B8;
+}
+
+/* Container principal */
+.sobre-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px;
+  background: linear-gradient(135deg, #f5f5f5, #e3e3e3); /* Gradiente suave */
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito hover no container */
+.sobre-container:hover {
+  background: linear-gradient(135deg, #fafafa, #eaeaea); /* Leve mudança de cor */
+  transform: scale(1.02); /* Leve zoom no hover */
+}
+
+/* Área da imagem */
+.sobre-imagem {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Círculo da imagem com efeito de brilho */
+.image-circle {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)); /* Efeito de brilho */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+  border: 6px solid #ffffff; /* Borda branca */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito hover na imagem */
+.image-circle:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Sombra maior no hover */
+  transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+/* Imagem dentro do círculo */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha o círculo */
+  border-radius: inherit;
+  transition: transform 0.3s ease;
+}
+
+/* Bolinhas de navegação para o carrossel */
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.7); /* Bolinhas mais visíveis */
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--primary-color); /* Bolinha ativa em cor vibrante */
+}
+
+/* Área de conteúdo/texto */
+.sobre-conteudo {
+  width: 45%;
+  padding-left: 60px;
+}
+
+/* Título estilizado */
+.sobre-titulo {
+  font-size: 3.5rem; /* Tamanho grande para o título */
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Espaçamento entre as letras */
+  position: relative;
+}
+
+/* Linha de destaque abaixo do título */
+.sobre-titulo::after {
+  content: '';
+  width: 100px;
+  height: 4px;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+/* Descrição com mais espaçamento e clareza */
+.sobre-descricao {
+  font-size: 1.3rem; /* Texto um pouco maior */
+  color: #555;
+  line-height: 1.6; /* Ajuste do espaçamento entre linhas */
+  margin-bottom: 30px; /* Aumente este valor para mais espaço abaixo do texto */
+  text-align: justify;
+  max-width: 100%;
+}
+
+/* Botão de ação "Get Started" */
+.sobre-btn {
+  padding: 15px 40px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50px; /* Botão bem arredondado */
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra suave no botão */
+}
+
+/* Botão "Saiba Mais" */
+.sobre-saiba-mais {
+  margin-top: 30px; /* Aumente este valor para mais espaço acima do botão */
+  padding: 12px 35px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  text-decoration: none; /* Remove sublinhado do link */
+}
+
+/* Efeito hover no botão "Saiba Mais" */
+.sobre-saiba-mais:hover {
+  background-color: #6211B8;
+  color: #fff;
+  transform: translateY(-3px);
+  transition: 0.7s;
+}
+
+/* Seção de Destaques */
+.destaques-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #6211B8;
+  padding: 40px 0;
+  color: white;
+  text-align: center;
+}
+
+.destaque-item h3 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.destaque-item p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .sobre-imagem {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .image-circle {
+    width: 350px;
+    height: 350px;
+  }
+
+  .sobre-conteudo {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .sobre-titulo {
+    font-size: 2.8rem;
+  }
+
+  .sobre-descricao {
+    font-size: 1.2rem; /* Texto menor para telas pequenas */
+  }
+
+  .sobre-btn, .sobre-saiba-mais {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+
+  /* Seção de Destaques Responsiva */
+  .destaques-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .destaque-item h3 {
+    font-size: 2.5rem;
+  }
+
+  .destaque-item p {
+    font-size: 1rem;
+  }
+}

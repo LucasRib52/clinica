@@ -1,0 +1,22 @@
+/* global.css */
+
+/* Reset básico */
+  /* Garante que o corpo da página não fique deslocado */
+  html, body {
+    overflow-x: hidden; /* Remove a barra de rolagem horizontal */
+  }
+  
+  /* Define o layout fixo do site */
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* Define a largura máxima do site */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Adiciona um padding horizontal */
+  }

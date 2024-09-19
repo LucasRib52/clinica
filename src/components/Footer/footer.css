@@ -1,0 +1,57 @@
+/* Estilos gerais para o Footer */
+.footer-container {
+  width: 100%;
+  background-color: #6211B8; /* Cor principal do site como fundo */
+  padding: 20px 0; /* Padding ajustado para espaçamento melhor */
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3); /* Sombra no topo para destaque */
+}
+
+/* Estilo do conteúdo */
+.footer-content p {
+  margin: 5px 0;
+  font-size: 1rem; /* Tamanho do texto */
+  color: #f1f1f1;
+}
+
+/* Links dentro do footer */
+.footer-content a {
+  color: #FEB300; /* Amarelo vibrante para os links */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+  color: #F9225E; /* Cor secundária ao passar o mouse */
+}
+
+.footer-content a:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+/* Estilos adicionais de hover */
+.footer-container:hover {
+  background-color: #4E0F8A; /* Escurecendo o background ao passar o mouse */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .footer-content p {
+    font-size: 0.9rem; /* Texto menor em dispositivos móveis */
+  }
+
+  .footer-container {
+    padding: 15px 0; /* Padding menor em telas menores */
+  }
+}

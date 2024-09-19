@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.promotions-container {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.promotions-title {
+    font-size: 3em;
+    color: #4a4a4a;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.promotion-type {
+    font-size: 1.8em;
+    color: #4a4a4a;
+    margin: 0 20px;
+    font-weight: 600;
+}
+
+.carousel-button {
+    background-color: #6211B8;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:hover {
+    background-color: #53234e;
+    transform: scale(1.1);
+}
+
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.promotion-card {
+    background-color: #6211B8;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promotion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.promotion-day {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.promotion-price {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #f3e8fd;
+}
+
+.promotion-services {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    color: #e0c1ea;
+}
+
+.promotion-services li {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.promotion-note {
+    font-size: 0.9em;
+    color: #d0a8de;
+    margin-bottom: 15px;
+}
+
+.promotion-additional-note {
+    font-size: 0.85em;
+    color: #d0a8de;
+    margin-bottom: 25px;
+}
+
+.promotion-button {
+    background-color: #FEB300; /* Cor do botão alterada para amarelo */
+    color: #ffffff; /* Texto branco */
+    border: 2px solid #FEB300; /* Borda amarela */
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: 20px; /* Espaçamento superior */
+    display: inline-block; /* Ajusta o alinhamento do botão */
+}
+
+.promotion-button:hover {
+    background-color: #f3e8fd; /* Cor de fundo clara no hover */
+    color: #6b3064; /* Cor do texto no hover */
+    border: 2px solid #f3e8fd; /* Borda clara no hover */
+    transform: scale(1.05); /* Efeito de escala no hover */
+}

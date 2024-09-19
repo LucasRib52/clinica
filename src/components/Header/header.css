@@ -1,0 +1,154 @@
+:root {
+  --primary-color: #6211B8; /* Cor principal definida */
+  --header-bg: #ffffff; /* Fundo branco sólido */
+  --header-bg-scrolled: #e0e0e0; /* Cor mais escura sem transparência */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --font-primary: 'Playfair Display', serif;
+  --font-secondary: 'Roboto', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth; /* Suavização básica */
+}
+
+.header {
+  background-color: var(--header-bg);
+  padding: 15px 0;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: var(--font-secondary);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  background-color: var(--header-bg-scrolled); /* Fundo mais escuro ao rolar */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15); /* Mantendo uma sombra mais pronunciada */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  height: 70px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #6211B8 !important; /* Forçando a cor principal nas letras */
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-size: 18px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: white !important; /* Mantendo o texto branco ao passar o mouse */
+  background-color: #6211B8; /* Fundo roxo ao passar o mouse */
+  box-shadow: 0 4px 15px rgba(98, 17, 184, 0.3); /* Sombras ao passar o mouse */
+  transform: scale(1.05);
+}
+
+/* Ícone de menu hamburguer para dispositivos móveis */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+/* Menu mobile */
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.nav-list-mobile {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-list-mobile li a {
+  font-size: 24px;
+  padding: 10px 20px;
+  color: #6211B8 !important; /* Forçando a cor principal nas letras do menu mobile */
+  text-decoration: none;
+}
+
+.nav-list-mobile li a:hover {
+  color: white !important; /* Mantendo o texto branco no hover */
+  background-color: #6211B8; /* Fundo roxo no hover */
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
+/* Botão de fechar */
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+  .header-container {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .logo-container {
+    position: relative;
+    left: 0;
+    transform: none;
+    flex-grow: 1;
+  }
+
+  .menu-icon {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav {
+    display: none;
+  }
+}
