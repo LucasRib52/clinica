@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './header.css';
+import logo from '../../assets/logo.png'; // Importando a logo
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -36,7 +37,6 @@ const Header = () => {
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
 
-      // Atualiza a URL para incluir o novo caminho
       window.history.pushState(null, '', newUrl);
     }
 
@@ -46,26 +46,24 @@ const Header = () => {
   const handleHomeClick = (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    window.history.pushState(null, '', '/'); // Atualiza a URL para "/"
+    window.history.pushState(null, '', '/');
     closeMenu();
   };
 
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        {/* Logo à esquerda no celular */}
+        {/* Logo centralizada */}
         <div className="logo-container">
           <a href="/" onClick={handleHomeClick}>
-            <img src="src/assets/logo.png" alt="Logo" className="logo" />
+            <img src={logo} alt="Logo" className="logo" />
           </a>
         </div>
 
-        {/* Ícone do menu hamburguer à direita no celular */}
         <div className="menu-icon" onClick={toggleMenu}>
           &#9776;
         </div>
 
-        {/* Navegação normal no desktop */}
         <nav className="nav">
           <ul className="nav-list">
             <li><a href="/" onClick={handleHomeClick}>Home</a></li>
@@ -74,7 +72,6 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* Navegação adicional */}
         <nav className="nav">
           <ul className="nav-list">
             <li><a href="/planos" onClick={(e) => handleMenuClick(e, 'planos', '/planos')}>Planos</a></li>
@@ -83,7 +80,6 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* Menu hamburguer no mobile */}
         {menuOpen && (
           <nav className="nav-mobile">
             <div className="close-menu" onClick={closeMenu}>

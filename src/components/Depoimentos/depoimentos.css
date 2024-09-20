@@ -4,10 +4,9 @@
   --hover-color: #6211B8;
   --button-color: #6211B8;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --soft-gray: #777777; /* Cor suave para o subtítulo */
+  --soft-gray: #777777;
 }
 
-/* Container principal */
 .depoimentos-container {
   width: 100%;
   padding: 60px 0;
@@ -34,7 +33,6 @@
   z-index: 2;
 }
 
-/* Título e subtítulo */
 .depoimentos-container h2 {
   font-size: 2.5rem;
   color: black;
@@ -48,16 +46,15 @@
   color: var(--soft-gray);
 }
 
-/* Grid responsivo */
 .depoimentos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
-/* Card de cada depoimento */
 .depoimento-card {
   background-color: var(--secondary-color);
   color: black;
@@ -73,18 +70,16 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Adiciona rolagem para avaliações longas */
 .comentario {
   font-size: 1rem;
   margin-bottom: 20px;
   color: black;
   line-height: 1.5;
-  max-height: 150px; /* Define um limite de altura */
-  overflow-y: auto;  /* Adiciona barra de rolagem se exceder o limite */
-  padding-right: 10px; /* Para dar espaço à rolagem */
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
-/* Estiliza a barra de rolagem */
 .comentario::-webkit-scrollbar {
   width: 6px;
 }
@@ -94,7 +89,6 @@
   border-radius: 3px;
 }
 
-/* Cabeçalho do card */
 .depoimento-header {
   display: flex;
   align-items: center;
@@ -115,18 +109,11 @@
   color: black;
 }
 
-.author-info .data {
-  font-size: 0.9rem;
-  color: black;
-}
-
-/* Estrelas */
 .estrelas {
   color: #f1c40f;
   display: flex;
 }
 
-/* Bolinhas de navegação */
 .pagination-dots {
   display: flex;
   justify-content: center;
@@ -147,50 +134,6 @@
   background-color: var(--primary-color);
 }
 
-/* Botão Fale Conosco */
-.button-container {
-  margin-top: 30px;
-}
-
-.contact-button {
-  background-color: var(--button-color);
-  color: var(--secondary-color);
-  border: none;
-  padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  text-decoration: none;
-  box-shadow: 0 4px 15px var(--shadow-color);
-}
-
-.contact-button:hover {
-  background-color: var(--hover-color);
-  color: var(--secondary-color);
-  transform: translateY(-5px);
-}
-
-/* Animação de bounce */
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-.contact-button {
-  animation: bounce 2s infinite;
-}
-
-/* Responsividade */
 @media (max-width: 1024px) {
   .depoimentos-grid {
     grid-template-columns: repeat(2, 1fr);
