@@ -1,12 +1,13 @@
 import React from 'react';
 import './home.css';
 import { FaWhatsapp } from 'react-icons/fa'; // Importar o ícone do WhatsApp
+import videoSource from '/src/assets/teste.mp4'; // Importar o vídeo corretamente
 
 const Home = () => {
   return (
     <section className="home">
       <video className="background-video" autoPlay loop muted playsInline>
-        <source src="/src/assets/teste.mp4" type="video/mp4" />
+        <source src={videoSource} type="video/mp4" />
         Seu navegador não suporta o vídeo.
       </video>
       {/* Seção de conteúdo à esquerda */}
