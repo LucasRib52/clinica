@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './global.css'; // Importa o arquivo global.css
+import TagManager from 'react-gtm-module'; // Importa o módulo GTM
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Sobre from './components/Sobre/Sobre';
@@ -11,6 +12,14 @@ import Footer from './components/Footer/Footer';
 import FloatingButton from './components/FloatingButton/FloatingButton';
 
 function App() {
+  useEffect(() => {
+    // Inicializa o Google Tag Manager
+    const tagManagerArgs = {
+      gtmId: 'GTM-MBJXCS3K', // Substitua pelo seu ID do GTM
+    };
+    TagManager.initialize(tagManagerArgs);
+  }, []);
+
   return (
     <div>
       <Header />
