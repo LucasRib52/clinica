@@ -19,8 +19,8 @@
 /* Mensagem ao lado do botão */
 .floating-message {
   background-color: white;
-  padding: 10px 15px;
-  border-radius: 20px;
+  padding: 8px 12px;
+  border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-size: 14px;
   color: #333;
@@ -101,9 +101,9 @@
   }
 
   .floating-message {
-    font-size: 12px;
-    padding: 8px 12px;
-    margin-right: 60px;
+    font-size: 12px; /* Reduz o tamanho do texto */
+    padding: 6px 10px; /* Ajusta o espaçamento interno */
+    margin-right: 8px; /* Reduz a margem entre texto e botão */
   }
 
   .floating-btn {
@@ -120,9 +120,9 @@
   }
 
   .floating-message {
-    font-size: 10px;
-    padding: 6px 10px;
-    margin-right: 50px;
+    font-size: 10px; /* Texto ainda menor */
+    padding: 4px 8px;
+    margin-right: 6px;
   }
 
   .floating-btn {
