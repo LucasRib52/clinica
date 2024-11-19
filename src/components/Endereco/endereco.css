@@ -120,6 +120,7 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra mais profunda no hover */
 }
 
+
 /* Responsividade */
 @media (max-width: 768px) {
   .endereco-content {

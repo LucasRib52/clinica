@@ -4,7 +4,7 @@ import './endereco.css';
 
 const Endereco = () => {
   const handleLocationClick = () => {
-    window.open("https://www.google.com/maps/dir/?api=1&destination=Av.+Rio+Branco,+552+-+Canto+do+Forte,+Praia+Grande+-+SP,+11700-200", "_blank");
+    window.open("https://www.google.com/maps/dir//Cl%C3%ADnica+Veterin%C3%A1ria+Violetta+24+horas+-+Av.+Rio+Branco,+552+-+Canto+do+Forte,+Praia+Grande+-+SP,+11700-200/@-24.0092352,-46.408915,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94ce1d3233086269:0x248ebdfca6788b0f!2m2!1d-46.4063401!2d-24.0092401!3e0?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D", "_blank");
   };
 
   return (
