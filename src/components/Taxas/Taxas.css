@@ -1,0 +1,148 @@
+/* Container principal */
+.container-taxas {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 25px;
+    background: #fff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    border: 3px solid #6211B8;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Título */
+  .container-taxas h2 {
+    font-size: 28px;
+    color: #6211B8;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  /* Labels */
+  .container-taxas label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+  }
+  
+  /* Inputs e Select */
+  .container-taxas input,
+  .container-taxas select {
+    width: 100%;
+    padding: 14px;
+    margin: 5px 0 15px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    background: #f9f9f9;
+  }
+  
+  .container-taxas input:focus,
+  .container-taxas select:focus {
+    border-color: #6211B8;
+    background: #fff;
+  }
+  
+  /* Botão */
+  .container-taxas button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #F9225E, #ff4d79);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container-taxas button:hover {
+    background: linear-gradient(45deg, #d81c4a, #ff335a);
+    transform: scale(1.05);
+  }
+  
+  /* Resultados */
+  .result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid #6211B8;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .result p {
+    font-size: 18px;
+    color: #444;
+    margin: 8px 0;
+  }
+  
+  .result span {
+    color: #F9225E;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /* Animação ao passar o mouse */
+  .container-taxas:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .container-taxas {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .container-taxas h2 {
+      font-size: 24px;
+    }
+  
+    .container-taxas button {
+      font-size: 16px;
+    }
+  
+    .result p {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container-taxas {
+      width: 95%;
+      padding: 18px;
+    }
+  
+    .container-taxas h2 {
+      font-size: 22px;
+    }
+  
+    .container-taxas input,
+    .container-taxas select {
+      padding: 12px;
+      font-size: 14px;
+    }
+  
+    .container-taxas button {
+      padding: 12px;
+      font-size: 16px;
+    }
+  
+    .result p {
+      font-size: 14px;
+    }
+  }
+  

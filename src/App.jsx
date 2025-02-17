@@ -1,68 +1,65 @@
-import React, { useEffect } from 'react';
-import './global.css'; // Importa o arquivo global.css
-import TagManager from 'react-gtm-module'; // Importa o módulo GTM
-import { BrowserRouter as Router, useLocation } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Home from './components/Home/Home';
-import Sobre from './components/Sobre/Sobre';
-import Services from './components/Services/Service';
-import Plano from './components/Plano/Plano';
-import Endereco from './components/Endereco/Endereco';
-import Depoimentos from './components/Depoimentos/Depoimentos';
-import Footer from './components/Footer/Footer';
-import FloatingButton from './components/FloatingButton/FloatingButton';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import TagManager from "react-gtm-module";
+import "./global.css";
 
-// Componente para rolar até a seção correspondente à URL
-function ScrollToSection() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.pathname) {
-      const sectionId = location.pathname.replace('/', ''); // Remove a barra para obter o ID
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [location]);
-
-  return null;
-}
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+import Sobre from "./components/Sobre/Sobre";
+import Services from "./components/Services/Service";
+import Plano from "./components/Plano/Plano";
+import Endereco from "./components/Endereco/Endereco";
+import Depoimentos from "./components/Depoimentos/Depoimentos";
+import FloatingButton from "./components/FloatingButton/FloatingButton";
+import Taxas from "./components/Taxas/Taxas"; // Simulador de Taxas
 
 function App() {
   useEffect(() => {
     // Inicializa o Google Tag Manager
     const tagManagerArgs = {
-      gtmId: 'GTM-MBJXCS3K', // Substitua pelo seu ID do GTM
+      gtmId: "GTM-MBJXCS3K",
     };
     TagManager.initialize(tagManagerArgs);
   }, []);
 
   return (
     <Router>
-      <ScrollToSection />
-      <Header />
-      {/* Todas as seções permanecem renderizadas */}
-      <section id="home">
-        <Home />
-      </section>
-      <section id="services">
-        <Services />
-      </section>
-      <section id="sobre">
-        <Sobre />
-      </section>
-      <section id="planos">
-        <Plano />
-      </section>
-      <section id="endereco">
-        <Endereco />
-      </section>
-      <section id="avaliacao">
-        <Depoimentos />
-      </section>
-      <Footer />
-      <FloatingButton />
+      <Routes>
+        {/* 🔒 Página oculta do Simulador de Taxas (SEM HEADER) */}
+        <Route path="/simulador-taxas" element={<Taxas />} />
+
+        {/* 🌎 Página Principal (COM HEADER) */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <section id="home">
+                <Home />
+              </section>
+              <section id="services">
+                <Services />
+              </section>
+              <section id="sobre">
+                <Sobre />
+              </section>
+              <section id="planos">
+                <Plano />
+              </section>
+              <section id="endereco">
+                <Endereco />
+              </section>
+              <section id="avaliacao">
+                <Depoimentos />
+              </section>
+              <FloatingButton />
+            </>
+          }
+        />
+
+        {/* 🔄 Redireciona qualquer rota inválida para a Home */}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </Router>
   );
 }
