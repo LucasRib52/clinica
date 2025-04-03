@@ -4,60 +4,50 @@ import TagManager from "react-gtm-module";
 import "./global.css";
 
 import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
-import Sobre from "./components/Sobre/Sobre";
-import Services from "./components/Services/Service";
-import Plano from "./components/Plano/Plano";
-import Endereco from "./components/Endereco/Endereco";
-import Depoimentos from "./components/Depoimentos/Depoimentos";
-import FloatingButton from "./components/FloatingButton/FloatingButton";
-import Taxas from "./components/Taxas/Taxas"; // Simulador de Taxas
+import MainHome from "./components/MainHome/MainHome";
+import Taxas from "./components/Taxas/Taxas";
+import BanhoETosa from "./components/BanhoETosa/Banhoetosa";
+import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import FloatingButton from "./components/FloatingButton/FloatingButton"; // Import do botão
 
 function App() {
   useEffect(() => {
-    // Inicializa o Google Tag Manager
-    const tagManagerArgs = {
-      gtmId: "GTM-MBJXCS3K",
-    };
-    TagManager.initialize(tagManagerArgs);
+    TagManager.initialize({ gtmId: "GTM-MBJXCS3K" });
   }, []);
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
-        {/* 🔒 Página oculta do Simulador de Taxas (SEM HEADER) */}
+        {/* Página exclusiva do simulador de taxas */}
         <Route path="/simulador-taxas" element={<Taxas />} />
 
-        {/* 🌎 Página Principal (COM HEADER) */}
+        {/* Página separada do banho e tosa */}
+        <Route
+          path="/banho-e-tosa"
+          element={
+            <>
+              <Header />
+              <BanhoETosa />
+              <Footer />
+              <FloatingButton /> {/* <-- Adicionado aqui */}
+            </>
+          }
+        />
+
+        {/* Rota principal que carrega todas as seções da home */}
         <Route
           path="/"
           element={
             <>
               <Header />
-              <section id="home">
-                <Home />
-              </section>
-              <section id="services">
-                <Services />
-              </section>
-              <section id="sobre">
-                <Sobre />
-              </section>
-              <section id="planos">
-                <Plano />
-              </section>
-              <section id="endereco">
-                <Endereco />
-              </section>
-              <section id="avaliacao">
-                <Depoimentos />
-              </section>
-              <FloatingButton />
+              <MainHome />
             </>
           }
         />
 
-        {/* 🔄 Redireciona qualquer rota inválida para a Home */}
+        {/* Redirecionamento para home caso a rota não exista */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
