@@ -20,7 +20,7 @@ const Sobre = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 3000); // Alterna as imagens a cada 3 segundos
+        }, 3000);
         return () => clearInterval(interval);
     }, []);
 
@@ -50,45 +50,46 @@ const Sobre = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className="sobre-conteudo">
-                    <h2 className="sobre-titulo">Sobre Nós</h2>
+                    <h2 className="sobre-titulo">Sobre a Clínica Violetta</h2>
                     <p className="sobre-descricao">
-                        Realizamos atendimentos, vacinas, emergência, internação separada de cães e gatos, área de passeio,
-                        hospedagem, cirurgias, atendemos animais exóticos com horário marcado, exames de imagem com horário
-                        marcado e exames laboratoriais.
+                        A <strong>Clínica Veterinária Violetta</strong> é referência em <strong>atendimento veterinário 24 horas</strong> em <strong>Praia Grande</strong>, oferecendo serviços completos para o cuidado do seu pet. Realizamos <strong>consultas, vacinação, internação, emergências</strong> e atendimento para animais exóticos com hora marcada.
                     </p>
                     <p className="sobre-descricao">
-                        Oferecemos em nossa estrutura salas de atendimento amplas e climatizadas, internamento monitorado, 
-                        sala de cirurgia com todo suporte necessário para atendimento de excelência. Contamos com laboratório 
-                        próprio para realização de exames!
+                        Nossa estrutura foi pensada para o conforto e segurança do seu pet. Contamos com <strong>salas climatizadas, internamento separado para cães e gatos, laboratório próprio para exames laboratoriais</strong>, sala cirúrgica completa, exames de imagem e uma equipe especializada em diversas áreas da medicina veterinária.
                     </p>
-                    <a href="https://api.whatsapp.com/send?phone=5513991103209&text=Ol%C3%A1%2C%20Cl%C3%ADnica%20Violetta!%20Eu%20preciso%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20seus%20servi%C3%A7os%20veterin%C3%A1rios." className="sobre-saiba-mais">
+                    <a
+                        href="https://api.whatsapp.com/send?phone=5513991103209&text=Ol%C3%A1%2C%20Cl%C3%ADnica%20Violetta!%20Eu%20preciso%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20seus%20servi%C3%A7os%20veterin%C3%A1rios."
+                        className="sobre-saiba-mais"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         Saiba Mais
                     </a>
                 </div>
             </div>
 
-            {/* Nova Seção de Destaques */}
             <div className="destaques-container">
                 <div className="destaque-item">
                     <h3>24H</h3>
-                    <p>Estamos sempre abertos</p>
+                    <p>Atendimento veterinário de emergência</p>
                 </div>
                 <div className="destaque-item">
-                    <h3>+1,000</h3>
-                    <p>Pets atendidos</p>
+                    <h3>+2.000</h3>
+                    <p>Pets atendidos com carinho e dedicação</p>
                 </div>
                 <div className="destaque-item">
-                    <h3>+100</h3>
-                    <p>Avaliações 5 estrelas</p>
+                    <h3>+200</h3>
+                    <p>Avaliações 5 estrelas no Google</p>
                 </div>
                 <div className="destaque-item">
                     <h3>+10</h3>
-                    <p>Especialidades</p>
+                    <p>Especialidades veterinárias disponíveis</p>
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default Sobre;

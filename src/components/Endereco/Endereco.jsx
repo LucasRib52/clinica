@@ -1,28 +1,31 @@
 import React from 'react';
-import { FaFacebookF, FaInstagram, FaGoogle } from 'react-icons/fa'; // Importando ícones
+import { FaFacebookF, FaInstagram, FaGoogle } from 'react-icons/fa';
 import './endereco.css';
 
 const Endereco = () => {
   const handleLocationClick = () => {
-    window.open("https://www.google.com/maps/dir//Cl%C3%ADnica+Veterin%C3%A1ria+Violetta+24+horas+-+Av.+Rio+Branco,+552+-+Canto+do+Forte,+Praia+Grande+-+SP,+11700-200/@-24.0092352,-46.408915,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94ce1d3233086269:0x248ebdfca6788b0f!2m2!1d-46.4063401!2d-24.0092401!3e0?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D", "_blank");
+    window.open(
+      "https://www.google.com/maps/dir//Clínica+Veterinária+Violetta+24+horas+-+Av.+Rio+Branco,+552+-+Canto+do+Forte,+Praia+Grande+-+SP,+11700-200",
+      "_blank"
+    );
   };
 
   return (
     <section className="endereco-container">
       <div className="endereco-content">
         <div className="endereco-info">
-          <h2>Onde nos encontrar</h2>
+          <h2>Clínica Veterinária em Praia Grande</h2>
 
           <h3>Endereço</h3>
-          <p>Av. Rio Branco, 552 - Canto do Forte, Praia Grande - SP, 11700-200</p>
+          <p>Av. Rio Branco, 552 - Canto do Forte, Praia Grande - SP</p>
 
-          <h3>Telefone</h3>
+          <h3>Telefone para emergências 24h</h3>
           <p>(13) 99110-3209</p>
 
-          <h3>E-mail</h3>
+          <h3>E-mail de contato</h3>
           <p>clinvetvioletta24horas@gmail.com</p>
 
-          <h3>Redes Sociais</h3>
+          <h3>Siga nossa clínica para pets</h3>
           <div className="social-icons">
             <a href="https://www.facebook.com/p/Cl%C3%ADnica-Veterin%C3%A1ria-Violetta-24-Horas-100075985121997/" target="_blank" rel="noopener noreferrer">
               <FaFacebookF />
@@ -30,7 +33,7 @@ const Endereco = () => {
             <a href="https://www.instagram.com/clinicaveterinariavioletta/" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="https://www.google.com/search?q=clinica+veterinaria+violetta&oq=c&gs_lcrp=EgZjaHJvbWUqDggCEEUYJxg7GIAEGIoFMgYIABBFGDwyBggBEEUYPDIOCAIQRRgnGDsYgAQYigUyEwgDEC4YgwEYxwEYsQMY0QMYgAQyBggEEEUYOzIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDEwNTJqMGo0qAIAsAIB&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.google.com/search?q=clinica+veterinaria+violetta" target="_blank" rel="noopener noreferrer">
               <FaGoogle />
             </a>
           </div>
@@ -45,18 +48,18 @@ const Endereco = () => {
             allowFullScreen=""
             aria-hidden="false"
             tabIndex="0"
+            title="Mapa da Clínica Veterinária Violetta"
           ></iframe>
         </div>
 
-        {/* Botão de localização */}
         <div className="localizacao-btn-container">
           <button className="localizacao-btn" onClick={handleLocationClick}>
-            Ver Localização
+            Ver localização no Google Maps
           </button>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Endereco;

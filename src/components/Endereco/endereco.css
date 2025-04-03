@@ -1,146 +1,172 @@
-/* Estilos gerais para o componente Endereco */
+:root {
+  --roxo: #6211B8;
+  --roxo-hover: #4e0e99;
+  --amarelo: #FEB300;
+  --branco: #ffffff;
+  --cinza: #f6f6f6;
+  --azul-btn: #16bfe1;
+  --cinza-texto: #444;
+  --sombra-suave: rgba(0, 0, 0, 0.2);
+}
+
+/* Container geral */
 .endereco-container {
   width: 100%;
   padding: 60px 20px;
-  background: #6211B8; /* Alterado para amarelo */
+  background: linear-gradient(135deg, var(--roxo), #470097);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  animation: fadeIn 1.2s ease-in;
 }
 
+/* Área central com conteúdo */
 .endereco-content {
-  width: 100%;
   max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  border-radius: 15px; /* Bordas suavemente arredondadas */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+  width: 100%;
+  background: var(--branco);
+  border-radius: 20px;
+  box-shadow: 0 12px 25px var(--sombra-suave);
   overflow: hidden;
+  animation: fadeInUp 1s ease;
 }
 
+/* Bloco com informações */
 .endereco-info {
-  padding: 40px;
-  background-color: #FEB300;
-  color: #ffffff;
+  background: var(--amarelo);
+  padding: 50px;
+  color: var(--branco);
   text-align: left;
-  border-top-left-radius: 15px; 
-  border-top-right-radius: 15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  animation: slideInLeft 1s ease;
 }
 
 .endereco-info h2 {
-  font-size: 2rem;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  font-weight: 800;
   margin-bottom: 30px;
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase; /* Texto em maiúsculas */
 }
 
 .endereco-info h3 {
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-top: 25px;
+  margin-bottom: 8px;
 }
 
 .endereco-info p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #fffefb;
+  line-height: 1.6;
 }
 
-.endereco-info .social-icons {
+/* Ícones sociais */
+.social-icons {
   display: flex;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 25px;
+  margin-top: 25px;
 }
 
-.endereco-info .social-icons a {
-  color: #ffffff;
+.social-icons a {
+  color: var(--branco);
   font-size: 1.8rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.4s ease, color 0.3s ease;
 }
 
-.endereco-info .social-icons a:hover {
-  transform: scale(1.2); /* Zoom mais expressivo ao passar o mouse */
-  color: #a04e94;
+.social-icons a:hover {
+  transform: scale(1.3);
+  color: var(--roxo-hover);
 }
 
+/* Mapa com efeito visual */
 .endereco-mapa {
-  height: 400px; /* Altura maior para o mapa */
-  position: relative;
-  border-bottom-left-radius: 15px; 
-  border-bottom-right-radius: 15px;
+  height: 420px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  animation: fadeIn 1.4s ease;
 }
 
 .endereco-mapa iframe {
   width: 100%;
   height: 100%;
   border: none;
-  filter: grayscale(50%); /* Aplicar um filtro de cinza */
-  transition: filter 0.3s ease;
+  filter: grayscale(40%) brightness(0.95);
+  transition: all 0.4s ease;
 }
 
 .endereco-mapa iframe:hover {
-  filter: grayscale(0%); /* Remover o filtro de cinza ao passar o mouse */
+  filter: grayscale(0%) brightness(1);
 }
 
-/* Botão de Localização */
+/* Botão com efeito visual */
 .localizacao-btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  background-color: #FEB300;
+  background: var(--amarelo);
+  padding: 30px 20px;
+  text-align: center;
 }
 
 .localizacao-btn {
-  background-color: rgb(22, 191, 225); /* Cor mais vibrante para destaque */
-  color: #ffffff;
-  padding: 15px 50px;
-  font-size: 1.4rem;
-  font-family: 'Roboto', sans-serif;
+  background: var(--azul-btn);
+  color: var(--branco);
+  padding: 14px 45px;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  font-weight: bold;
   border: none;
-  border-radius: 50px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Sombra maior para destacar */
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.localizacao-btn .icon {
-  font-size: 1.6rem;
+  transition: 0.3s ease all;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  animation: pulse 1.5s infinite;
 }
 
 .localizacao-btn:hover {
-  background-color: #9b0ce7; /* Cor mais escura ao passar o mouse */
-  transform: translateY(-4px); /* Elevação maior no hover */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra mais profunda no hover */
+  background-color: var(--roxo-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(22, 191, 225, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(22, 191, 225, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(22, 191, 225, 0); }
+}
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .endereco-content {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-
   .endereco-info {
-    border-radius: 10px 10px 0 0;
+    padding: 35px 25px;
   }
 
-  .endereco-mapa {
-    border-radius: 0 0 10px 10px;
-    height: 250px; /* Altura menor para o mapa em dispositivos móveis */
-    padding: 0 10px; /* Adiciona um pouco de padding horizontal para evitar que o mapa encoste nas bordas */
+  .endereco-info h2 {
+    font-size: 2rem;
+    text-align: center;
   }
 
   .localizacao-btn {
-    width: 90%; /* O botão ocupa quase toda a largura, mas com espaçamento nas bordas */
-    font-size: 1.2rem; /* Tamanho do texto ajustado */
-    padding: 12px 30px; /* Ajustando o padding para dispositivos menores */
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  .endereco-mapa {
+    height: 280px;
   }
 }

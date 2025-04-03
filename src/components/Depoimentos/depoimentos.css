@@ -2,29 +2,28 @@
   --primary-color: #6b3064;
   --secondary-color: #ffffff;
   --hover-color: #6211B8;
-  --button-color: #6211B8;
+  --accent-color: #FEB300;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --soft-gray: #777777;
 }
 
 .depoimentos-container {
-  width: 100%;
-  padding: 60px 0;
-  background: rgba(255, 255, 255, 0.7) url('/src/assets/depoimentos.png') no-repeat center center;
-  background-size: cover;
-  color: black;
-  text-align: center;
   position: relative;
+  width: 100%;
+  padding: 100px 20px;
+  background: url('/src/assets/depoimentos.png') no-repeat center center;
+  background-size: cover;
+  color: var(--secondary-color);
+  text-align: center;
+  overflow: hidden;
 }
 
 .depoimentos-container::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(128, 128, 128, 0.5);
+  inset: 0;
+  background: rgba(98, 17, 184, 0.65);
+  backdrop-filter: blur(3px);
   z-index: 1;
 }
 
@@ -34,59 +33,43 @@
 }
 
 .depoimentos-container h2 {
-  font-size: 2.5rem;
-  color: black;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
   text-transform: uppercase;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
 }
 
 .subtitulo {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  color: var(--soft-gray);
+  font-size: 1.3rem;
+  color: #f1f1f1;
+  margin-bottom: 50px;
+  animation: fadeIn 1.2s ease;
 }
 
 .depoimentos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
+  animation: fadeInUp 1.5s ease;
 }
 
 .depoimento-card {
-  background-color: var(--secondary-color);
-  color: black;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px var(--shadow-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(2px);
 }
 
 .depoimento-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.comentario {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: black;
-  line-height: 1.5;
-  max-height: 150px;
-  overflow-y: auto;
-  padding-right: 10px;
-}
-
-.comentario::-webkit-scrollbar {
-  width: 6px;
-}
-
-.comentario::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-  border-radius: 3px;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
 }
 
 .depoimento-header {
@@ -98,65 +81,129 @@
 .author-photo {
   width: 60px;
   height: 60px;
+  object-fit: cover;
   border-radius: 50%;
   margin-right: 15px;
   border: 2px solid var(--primary-color);
 }
 
 .author-info .nome {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: black;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+.comentario {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-height: 150px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding-right: 8px;
+}
+
+.comentario::-webkit-scrollbar {
+  width: 5px;
+}
+.comentario::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 4px;
 }
 
 .estrelas {
   color: #f1c40f;
   display: flex;
+  gap: 5px;
 }
 
 .pagination-dots {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  gap: 10px;
 }
 
 .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #ccc;
-  margin: 0 8px;
+  background: #ccc;
+  transition: all 0.3s ease;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .dot.active {
-  background-color: var(--primary-color);
+  background: var(--accent-color);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--accent-color);
 }
 
+/* Botão "Deixe sua Avaliação" */
+.avaliacao-btn-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.avaliacao-btn {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.avaliacao-btn:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-3px);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
 @media (max-width: 1024px) {
   .depoimentos-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .depoimentos-container h2 {
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .depoimentos-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 20px;
   }
 
   .depoimento-card {
     padding: 20px;
-    font-size: 0.9rem;
   }
 
   .depoimentos-container {
-    padding: 40px 20px;
+    padding: 60px 20px;
   }
 
-  .contact-button {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+  .subtitulo {
+    font-size: 1rem;
   }
 }

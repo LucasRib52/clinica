@@ -1,133 +1,202 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-.promotions-container {
+:root {
+    --roxo-principal: #6211B8;
+    --roxo-escuro: #4e0e99;
+    --roxo-claro: #a46dff;
+    --amarelo: #FEB300;
+    --branco: #ffffff;
+    --texto-claro: #f3e8fd;
+    --sombra: rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Container principal */
+  .promotions-container {
     text-align: center;
     padding: 60px 20px;
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
-    margin: 50px auto;
-}
-
-.promotions-title {
-    font-size: 3em;
-    color: #4a4a4a;
+    background: linear-gradient(135deg, #ffffff, #faf9ff);
+    border-radius: 30px;
+    box-shadow: 0 15px 35px var(--sombra);
+    max-width: 1300px;
+    margin: 80px auto;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  /* Título principal */
+  .promotions-title {
+    font-size: 3rem;
+    color: #333;
+    font-weight: 800;
     margin-bottom: 40px;
-    font-weight: 700;
-}
-
-.carousel-controls {
+  }
+  
+  /* Navegação */
+  .carousel-controls {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 30px;
     margin-bottom: 40px;
-}
-
-.promotion-type {
-    font-size: 1.8em;
-    color: #4a4a4a;
-    margin: 0 20px;
-    font-weight: 600;
-}
-
-.carousel-button {
-    background-color: #6211B8;
+  }
+  
+  .promotion-type {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--roxo-principal);
+  }
+  
+  .carousel-button {
+    background-color: var(--roxo-principal);
+    color: var(--branco);
     border: none;
-    color: #ffffff;
-    font-size: 1.5em;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-button:hover {
-    background-color: #53234e;
-    transform: scale(1.1);
-}
-
-.promotions-grid {
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px var(--sombra);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .carousel-button:hover {
+    background-color: var(--roxo-escuro);
+    transform: scale(1.15);
+  }
+  
+  /* Grid de planos */
+  .promotions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.promotion-card {
-    background-color: #6211B8;
-    color: #ffffff;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
+  }
+  
+  /* Card individual */
+  .promotion-card {
+    background: rgba(98, 17, 184, 0.85);
+    color: var(--texto-claro);
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.promotion-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.promotion-day {
-    font-size: 1.6em;
+    animation: zoomIn 0.8s ease;
+  }
+  
+  .promotion-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Título e preço */
+  .promotion-day {
+    font-size: 1.6rem;
+    color: var(--amarelo);
+    font-weight: bold;
     margin-bottom: 10px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.promotion-price {
-    font-size: 2.2em;
+  }
+  
+  .promotion-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
     margin-bottom: 20px;
-    font-weight: bold;
-    color: #f3e8fd;
-}
-
-.promotion-services {
+  }
+  
+  /* Lista de serviços */
+  .promotion-services {
     list-style: none;
     padding: 0;
     margin: 0 0 20px 0;
-    color: #e0c1ea;
-}
-
-.promotion-services li {
-    font-size: 1.1em;
+  }
+  
+  .promotion-services li {
+    font-size: 1.1rem;
     margin-bottom: 8px;
-}
-
-.promotion-note {
-    font-size: 0.9em;
-    color: #d0a8de;
+    color: #e7d1ff;
+  }
+  
+  /* Notas */
+  .promotion-note,
+  .promotion-additional-note {
+    font-size: 0.9rem;
+    color: #dfc6f9;
     margin-bottom: 15px;
-}
-
-.promotion-additional-note {
-    font-size: 0.85em;
-    color: #d0a8de;
-    margin-bottom: 25px;
-}
-
-.promotion-button {
-    background-color: #FEB300; /* Cor do botão alterada para amarelo */
-    color: #ffffff; /* Texto branco */
-    border: 2px solid #FEB300; /* Borda amarela */
-    border-radius: 30px;
-    padding: 12px 25px;
-    font-size: 1.1em;
+  }
+  
+  /* Botão com efeito vibrante */
+  .promotion-button {
+    background-color: var(--amarelo);
+    color: var(--branco);
+    border: none;
+    border-radius: 40px;
+    padding: 14px 32px;
+    font-size: 1.1rem;
     font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
     text-decoration: none;
-    margin-top: 20px; /* Espaçamento superior */
-    display: inline-block; /* Ajusta o alinhamento do botão */
-}
-
-.promotion-button:hover {
-    background-color: #f3e8fd; /* Cor de fundo clara no hover */
-    color: #6b3064; /* Cor do texto no hover */
-    border: 2px solid #f3e8fd; /* Borda clara no hover */
-    transform: scale(1.05); /* Efeito de escala no hover */
-}
+    display: inline-block;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px var(--amarelo);
+  }
+  
+  .promotion-button:hover {
+    background-color: #fff;
+    color: var(--roxo-principal);
+    transform: scale(1.08);
+    box-shadow: 0 0 15px var(--amarelo);
+  }
+  
+  /* Animações */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .promotions-title {
+      font-size: 2.2rem;
+    }
+  
+    .promotion-type {
+      font-size: 1.4rem;
+    }
+  
+    .carousel-button {
+      width: 45px;
+      height: 45px;
+      font-size: 1.2rem;
+    }
+  
+    .promotion-card {
+      padding: 25px;
+    }
+  
+    .promotion-day {
+      font-size: 1.4rem;
+    }
+  
+    .promotion-price {
+      font-size: 1.8rem;
+    }
+  
+    .promotion-button {
+      width: 100%;
+      padding: 14px 0;
+    }
+  }
+  
