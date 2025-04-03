@@ -5,20 +5,29 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-}
-
-body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
 }
 
+/* Container padrão */
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: content-box; /* Padrão no desktop */
 }
 
-/* Animação Global Reveal aprimorada */
+/* Wrapper geral */
+.app-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: content-box;
+}
+
+/* Animação Reveal */
 .reveal {
   opacity: 0;
   transform: translateY(60px);
@@ -29,4 +38,22 @@ body {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ✅ CORREÇÃO SOMENTE PARA MOBILE */
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box !important;
+  }
+
+  .container,
+  .app-wrapper {
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
 }
